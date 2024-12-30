@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1016263770658",
+    "project_id": "aplikasi-forum-9bbb5",
+    "storage_bucket": "aplikasi-forum-9bbb5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016263770658:android:5f5aee04badad88adb407b",
+        "android_client_info": {
+          "package_name": "com.ikhsannurhakiki.aplikasiforum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1016263770658-ise815skag6vke7ligrv5fd112j83jel.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB0XZyfim5WD9HUly0rSBCyjSE6-7rMPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1016263770658-ise815skag6vke7ligrv5fd112j83jel.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

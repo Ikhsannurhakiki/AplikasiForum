@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/background2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/question_cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/item_container"
+                    style="@style/background"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="260dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/pageNumberText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/bg_image_numbering"
+                        android:padding="5dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toEndOf="@+id/viewPager"
+                        app:layout_constraintTop_toTopOf="@+id/viewPager" />
+
+                    <LinearLayout
+                        android:id="@+id/dotsIndicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="@id/viewPager"
+                        app:layout_constraintStart_toStartOf="@id/viewPager"
+                        app:layout_constraintTop_toBottomOf="@id/viewPager" />
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        style="@style/titleColor"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="@string/dummyText"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_bookmark"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dotsIndicator" />
+
+                    <ImageButton
+                        android:id="@+id/btn_bookmark"
+                        style="@style/background2"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="8dp"
+                        android:src="@drawable/bookmark_selector"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_views"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_title" />
+
+
+                    <TextView
+                        android:id="@+id/tv_timeAgo"
+                        style="@style/background2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:padding="2dp"
+                        android:text="@string/posted"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@+id/tv_title"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+
+                    <TextView
+                        android:id="@+id/tv_views"
+                        style="@style/background2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:padding="2dp"
+                        android:text="@string/views"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_timeAgo"
+                        app:layout_constraintStart_toEndOf="@+id/tv_timeAgo"
+                        app:layout_constraintTop_toTopOf="@+id/tv_timeAgo" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_tag"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                        app:layout_constraintStart_toEndOf="@+id/btn_score_up"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_views"
+                        tools:listitem="@layout/items_tag" />
+
+                    <ImageButton
+                        android:id="@+id/btn_score_up"
+                        style="@style/background"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/arrow_up_selector"
+                        app:layout_constraintStart_toStartOf="@+id/tv_timeAgo"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_timeAgo" />
+
+                    <TextView
+                        android:id="@+id/tv_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:textSize="16dp"
+                        app:layout_constraintEnd_toEndOf="@+id/btn_score_up"
+                        app:layout_constraintStart_toStartOf="@+id/btn_score_up"
+                        app:layout_constraintTop_toBottomOf="@id/btn_score_up" />
+
+                    <ImageButton
+                        android:id="@+id/btn_score_down"
+                        style="@style/background"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginVertical="4dp"
+                        android:layout_marginBottom="160dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/arrow_down_selector"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_score"
+                        app:layout_constraintStart_toStartOf="@+id/tv_score"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_score" />
+
+                    <TextView
+                        android:id="@+id/tv_question"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="top"
+                        android:text="@string/dummyText"
+                        android:textAlignment="inherit"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_askedBy"
+                        app:layout_constraintEnd_toEndOf="@+id/btn_bookmark"
+                        app:layout_constraintStart_toEndOf="@+id/btn_score_up"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_tag" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/circleImageView"
+                        style="@style/background2"
+                        android:layout_width="21dp"
+                        android:layout_height="21dp"
+                        android:layout_marginVertical="8dp"
+                        android:src="@drawable/img"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_askedBy"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_askedBy"
+                        app:layout_constraintTop_toTopOf="@+id/tv_askedBy" />
+
+                    <TextView
+                        android:id="@+id/tv_askedBy"
+                        style="@style/background2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:padding="2dp"
+                        android:text="@string/askedBy"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_question"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_question" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/background2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:text="@string/answer"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question_cardView" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:padding="2dp"
+                android:text="@string/not_finish"
+                android:textColor="@color/darkGrey"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:listitem="@layout/items_answer" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBarCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textLoading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="@color/green_500"
+        android:textSize="20sp" />
+
+</RelativeLayout>

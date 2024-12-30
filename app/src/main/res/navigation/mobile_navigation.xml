@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_subject_fragment">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.ikhsannurhakiki.aplikasiforum.ui.home.HomeFragment"
+        android:label="Aplikasi Forum"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/fragmentHome_to_fragmentDetailForum"
+            app:destination="@id/navigation_detail_forum"
+            app:popUpTo="@id/navigation_home"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpToInclusive="false"/>
+
+        <action
+            android:id="@+id/fragmentHome_to_FragmentAddQuestion"
+            app:destination="@id/navigation_add_question"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/fragmentHome_to_FragmentImagePopUp"
+            app:destination="@id/navigation_pop_up_image"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_edit_profile"
+        android:name="com.ikhsannurhakiki.aplikasiforum.ui.profile.EditProfileFragment"
+        android:label="@string/editProfile"
+        tools:layout="@layout/fragment_edit_profile">
+
+        <action
+            android:id="@+id/fragmentEditProfile_to_fragmentLogin"
+            app:destination="@id/navigation_login"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_detail_forum"
+        android:name="com.ikhsannurhakiki.aplikasiforum.ui.home.DetailForumFragment"
+        android:label="@string/detail"
+        tools:layout="@layout/fragment_detail_forum">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_material"
+        android:name="com.ikhsannurhakiki.aplikasiforum.ui.home.MaterialFragment"
+        android:label="@string/material"
+        tools:layout="@layout/fragment_material">
+        <action
+            android:id="@+id/fragmentMaterial_to_fragmentHome"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_material"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpToInclusive="false"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_manage_supp_lecturer"
+        android:name="com.ikhsannurhakiki.aplikasiforum.ui.home.ManageSuppLecturerFragment"
+        tools:layout="@layout/fragment_manage_supp_lecturer"/>
+
+    <fragment
+        android:id="@+id/navigation_subject_fragment"
+        android:name="com.ikhsannurhakiki.aplikasiforum.ui.home.SubjectFragment"
+        tools:layout="@layout/fragment_subject">
+        <action
+            android:id="@+id/fragmentPopUp_to_fragmentMaterial"
+            app:destination="@id/navigation_material"
+            app:popUpTo="@id/navigation_subject_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpToInclusive="false"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.ikhsannurhakiki.aplikasiforum.ui.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/fragmentProfile_to_fragmentEditProfile"
+            app:destination="@id/navigation_edit_profile"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/navigation_profile"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/fragmentProfile_to_fragmentMyQuestion"
+            app:destination="@id/navigation_myQuestion"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/navigation_profile"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/fragmentProfile_to_fragmentBookmark"
+            app:destination="@id/navigation_bookmark"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/navigation_profile"
+            app:popUpToInclusive="false" />
+
+        <action
+            android:id="@+id/fragmentProfile_to_fragmentReportedList"
+            app:destination="@id/navigation_reported_list"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/navigation_reported_list"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/fragmentProfile_to_fragmentManageSuppLecturer"
+            app:destination="@id/navigation_manage_supp_lecturer"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/navigation_manage_supp_lecturer"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_reported_list"
+        android:name="com.ikhsannurhakiki.aplikasiforum.ui.home.ReportedListFragment"
+        android:label="@string/reportList"
+        tools:layout="@layout/fragment_reported_list" />
+
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.ikhsannurhakiki.aplikasiforum.ui.preference.PreferenceFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/navigation_myQuestion"
+        android:name="com.ikhsannurhakiki.aplikasiforum.ui.profile.MyQuestionFragment"
+        android:label="@string/myQuestion"
+        tools:layout="@layout/fragment_my_question" />
+
+    <fragment
+        android:id="@+id/navigation_popUpLecturer"
+        android:name="com.ikhsannurhakiki.aplikasiforum.ui.home.LecturerPopUpFragment"
+        android:label="Aplikasi Forum"
+        tools:layout="@layout/fragment_lecturer_pop_up">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_add_question"
+        android:name="com.ikhsannurhakiki.aplikasiforum.ui.home.AddQuestionFragment"
+        tools:layout="@layout/fragment_add_question"/>
+
+    <fragment
+        android:id="@+id/navigation_pop_up_image"
+        android:name="com.ikhsannurhakiki.aplikasiforum.ui.home.ImagePopUpDialogFragment"
+        tools:layout="@layout/fragment_image_pop_up_dialog"/>
+
+    <fragment
+        android:id="@+id/navigation_bookmark"
+        android:name="com.ikhsannurhakiki.aplikasiforum.ui.profile.BookmarkFragment"
+        tools:layout="@layout/fragment_my_question"/>
+
+</navigation>

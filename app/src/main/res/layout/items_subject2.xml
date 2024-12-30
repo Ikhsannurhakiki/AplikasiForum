@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+        <Button
+            android:id="@+id/tv_subject"
+            style="@style/ButtonGeneralProfile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="0dp"
+            android:padding="8dp"
+            android:textAllCaps="false"
+            android:maxLines="3"
+            android:text="Algoritma dan Pemrograman"
+            android:textSize="13dp"
+            android:layout_marginHorizontal="8dp"
+            android:textAlignment="viewStart"/>
+
+</LinearLayout>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/background2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/progress_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="loading.json"
+            app:lottie_loop="true" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/question_cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/item_container"
+                    style="@style/background"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        style="@style/titleColor"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="@string/dummyText"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton"
+                        style="@style/background2"
+                        android:layout_width="30dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="8dp"
+                        android:src="@drawable/ic_baseline_more_vert_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_title" />
+
+
+                    <TextView
+                        android:id="@+id/tv_timeAgo"
+                        style="@style/background2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:padding="2dp"
+                        android:text="@string/posted"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@+id/tv_title"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+
+                    <TextView
+                        android:id="@+id/tv_views"
+                        style="@style/background2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:padding="2dp"
+                        android:text="@string/views"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_timeAgo"
+                        app:layout_constraintStart_toEndOf="@+id/tv_timeAgo"
+                        app:layout_constraintTop_toTopOf="@+id/tv_timeAgo" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_tag"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+                        app:layout_constraintStart_toEndOf="@+id/btn_score_up"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_views"
+                        tools:listitem="@layout/items_tag" />
+
+                    <ImageButton
+                        android:id="@+id/btn_score_up"
+                        style="@style/background"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/arrow_up_selector"
+                        app:layout_constraintStart_toStartOf="@+id/tv_timeAgo"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_timeAgo" />
+
+                    <TextView
+                        android:id="@+id/tv_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:textSize="16dp"
+                        app:layout_constraintEnd_toEndOf="@+id/btn_score_up"
+                        app:layout_constraintStart_toStartOf="@+id/btn_score_up"
+                        app:layout_constraintTop_toBottomOf="@id/btn_score_up" />
+
+                    <ImageButton
+                        android:id="@+id/btn_score_down"
+                        style="@style/background"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginVertical="4dp"
+                        android:layout_marginBottom="160dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/arrow_down_selector"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_score"
+                        app:layout_constraintStart_toStartOf="@+id/tv_score"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_score" />
+
+                    <TextView
+                        android:id="@+id/tv_question"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="top"
+                        android:text="@string/dummyText"
+                        android:textAlignment="inherit"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_askedBy"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_title"
+                        app:layout_constraintStart_toEndOf="@+id/btn_score_up"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_tag" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/circleImageView"
+                        style="@style/background2"
+                        android:layout_width="21dp"
+                        android:layout_height="21dp"
+                        android:layout_marginVertical="8dp"
+                        android:src="@drawable/img"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_askedBy"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_askedBy"
+                        app:layout_constraintTop_toTopOf="@+id/tv_askedBy" />
+
+                    <TextView
+                        android:id="@+id/tv_askedBy"
+                        style="@style/background2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:padding="2dp"
+                        android:text="@string/askedBy"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_question"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_question" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btn_response"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:drawableLeft="@drawable/ic_baseline_message_24"
+                android:padding="4dp"
+                android:text="@string/answer"
+                android:textSize="8sp"
+                android:tint="?attr/colorControlNormal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question_cardView" />
+
+
+            <Button
+                android:id="@+id/btn_bookmark"
+                style="@style/ButtonGeneral2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_baseline_bookmark_24"
+                android:padding="4dp"
+                android:text="@string/bookmark"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="@id/btn_response"
+                app:layout_constraintLeft_toRightOf="@id/btn_response"
+                app:layout_constraintRight_toLeftOf="@id/btn_finish"
+                app:layout_constraintTop_toTopOf="@id/btn_response" />
+
+            <Button
+                android:id="@+id/btn_finish"
+                style="@style/ButtonGeneral2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:drawableLeft="@drawable/ic_baseline_check_24"
+                android:padding="4dp"
+                android:text="@string/not_finish"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="@id/btn_bookmark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_bookmark" />
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/background2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:text="@string/answer"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_response" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:listitem="@layout/items_answer" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

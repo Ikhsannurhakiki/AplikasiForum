@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="32dp"
+    style="@style/background">
+
+<!--    <View-->
+<!--        android:id="@+id/view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="@color/darkGrey" />-->
+
+    <Button
+        android:id="@+id/btn_verification"
+        style="@style/ButtonGeneralProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/verifiedThisAnswer"
+        android:textAllCaps="false"
+        android:textAlignment="viewStart"
+        android:drawableLeft="@drawable/baseline_check_circle_outline_24"
+        android:padding="5dp"
+        />
+
+<!--    <View-->
+<!--        android:id="@+id/view2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="@color/darkGrey" />-->
+
+    <Button
+        android:id="@+id/btn_delete"
+        style="@style/ButtonGeneralProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:textAllCaps="false"
+        android:textAlignment="viewStart"
+        android:drawableLeft="@drawable/outline_delete_24"
+        android:padding="5dp"
+        />
+
+<!--    <View-->
+<!--        android:id="@+id/view3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="@color/darkGrey" />-->
+
+    <Button
+        android:id="@+id/btn_report"
+        style="@style/ButtonGeneralProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/reportThisAnswer"
+        android:textAlignment="viewStart"
+        android:drawableLeft="@drawable/ic_baseline_report_gmailerrorred_24"
+        android:padding="5dp"/>
+
+<!--    <View-->
+<!--        android:id="@+id/view4"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="@color/darkGrey" />-->
+
+</androidx.appcompat.widget.LinearLayoutCompat>
